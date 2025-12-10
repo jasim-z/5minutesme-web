@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 5MinutesMe Web
+
+The official website for the 5MinutesMe app - a mindful 5-minute habit companion.
+
+## Features
+
+- 🎨 **Dark Mode by Default** - Matches the app's design with dark theme as default
+- 🌓 **Theme Toggle** - Switch between light and dark modes
+- 📱 **Responsive Design** - Beautiful on all devices
+- ⚡ **Next.js 16** - Built with the latest Next.js and React 19
+- 🎯 **TypeScript** - Fully typed for better developer experience
+- 🎨 **Tailwind CSS v4** - Modern utility-first CSS
+- 🧩 **shadcn/ui** - Beautiful, accessible components
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+5minutesme-web/
+├── app/
+│   ├── layout.tsx      # Root layout with theme provider
+│   ├── page.tsx         # Landing page
+│   └── globals.css      # Global styles with theme colors
+├── components/
+│   ├── ui/              # shadcn/ui components
+│   ├── theme-provider.tsx  # Theme context provider
+│   └── theme-toggle.tsx     # Theme toggle component
+└── lib/
+    └── utils.ts         # Utility functions
+```
 
-## Learn More
+## Color Palette
 
-To learn more about Next.js, take a look at the following resources:
+The website uses the same color palette as the 5MinutesMe app:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Dark Theme (Default)
+- Background: `#2D3E3F` (Dark Forest)
+- Card: `#3D4F52` (Deep Teal)
+- Primary: `#7A9B8E` (Sage Green)
+- Accent: `#B5D4C8` (Mint Green)
+- Text: `#FFFFFF` (Pure White)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Light Theme
+- Background: `#E4EBE8` (Sage Green at 20% opacity)
+- Card: `#F5F8F6` (Very light sage/mint tint)
+- Primary: `#3D4F52` (Deep Teal)
+- Text: `#2D3E3F` (Dark Forest)
 
-## Deploy on Vercel
+## Building for Production
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The production build will be in the `.next` folder.
+
+## Deployment
+
+The site can be deployed to any platform that supports Next.js:
+
+- **Vercel** (recommended): `vercel deploy`
+- **Netlify**: Connect your repository
+- **Other platforms**: Follow Next.js deployment guides
+
+## License
+
+Private project - All rights reserved.
