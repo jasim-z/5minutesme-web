@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Just Start Small",
+  title: "5MinutesMe - Just Start Small",
   description: "Experience your life differently, one 5-minute activity at a time.",
 };
 

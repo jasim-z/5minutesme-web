@@ -162,7 +162,7 @@ export default function Home() {
             Ready to Start Your Journey?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Download 5MinutesMe today and begin transforming your life, one 5-minute activity at a time.
+            Download 5MinutesMe today and begin experiencing your life differently, one 5-minute activity at a time.
           </p>
           <div className="flex justify-center pt-4">
             <AppBadges />

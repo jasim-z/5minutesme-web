@@ -44,8 +44,8 @@ export function AppScreens() {
   if (!mounted) {
     // Return placeholder during SSR to prevent hydration mismatch
     return (
-      <div className="relative w-full max-w-sm">
-        <div className="relative bg-card border-2 border-border rounded-[3rem] p-4 shadow-2xl">
+      <div className="relative w-full max-w-[260px] sm:max-w-[320px] lg:max-w-sm">
+        <div className="relative bg-card border-2 border-border rounded-[3rem] p-3 sm:p-4 shadow-2xl">
           <div className="bg-background rounded-[2.5rem] overflow-hidden aspect-[9/19.5] flex items-center justify-center">
             <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
               <div className="text-center space-y-4 p-8">
@@ -61,8 +61,8 @@ export function AppScreens() {
   }
 
   return (
-    <div className="relative w-full max-w-sm">
-      <div className="relative bg-card border-2 border-border rounded-[3rem] p-4 shadow-2xl">
+    <div className="relative w-full max-w-[260px] sm:max-w-[320px] lg:max-w-sm">
+      <div className="relative bg-card border-2 border-border rounded-[3rem] p-3 sm:p-4 shadow-2xl">
         <div className="bg-background rounded-[2.5rem] overflow-hidden aspect-[9/19.5] relative">
           {/* Image Carousel */}
           <div className="relative w-full h-full">
@@ -84,26 +84,11 @@ export function AppScreens() {
               </div>
             ))}
           </div>
-          {/* Carousel indicators */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`h-2 rounded-full transition-all ${
-                  index === currentIndex
-                    ? "w-8 bg-primary"
-                    : "w-2 bg-primary/40 hover:bg-primary/60"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </div>
       {/* Decorative elements */}
-      <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl -z-10"></div>
-      <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-accent/20 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-16 h-16 sm:w-24 sm:h-24 bg-primary/20 rounded-full blur-2xl -z-10"></div>
+      <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-20 h-20 sm:w-32 sm:h-32 bg-accent/20 rounded-full blur-3xl -z-10"></div>
     </div>
   )
 }
