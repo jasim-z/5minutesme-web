@@ -1,8 +1,8 @@
 import { ThemeToggle } from "@/components/theme-toggle"
-import { Button } from "@/components/ui/button"
-import { Apple, Play, Timer, Heart, Sparkles, Shield, Leaf } from "lucide-react"
+import { Timer, Heart, Sparkles, Shield, Leaf } from "lucide-react"
 import { AppScreens } from "@/components/app-screens"
 import { Logo } from "@/components/logo"
+import { AppBadges } from "@/components/app-badges"
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                  Transform Your Life in Just{" "}
+                Experience Life Differently in Just{" "}
                   <span className="text-primary">5 Minutes</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
@@ -38,35 +38,7 @@ export default function Home() {
               </div>
 
               {/* Download Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button
-                  size="lg"
-                  className="h-14 px-8 bg-foreground text-background hover:bg-foreground/90 flex items-center gap-3"
-                  asChild
-                >
-                  <a href="#" className="flex items-center gap-3">
-                    <Apple className="h-6 w-6" />
-                    <div className="text-left">
-                      <div className="text-xs leading-none">Download on the</div>
-                      <div className="text-lg font-semibold leading-tight">App Store</div>
-                    </div>
-                  </a>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="h-14 px-8 border-2 flex items-center gap-3"
-                  asChild
-                >
-                  <a href="#" className="flex items-center gap-3">
-                    <Play className="h-6 w-6" />
-                    <div className="text-left">
-                      <div className="text-xs leading-none">Get it on</div>
-                      <div className="text-lg font-semibold leading-tight">Google Play</div>
-                    </div>
-                  </a>
-                </Button>
-              </div>
+              <AppBadges className="pt-4" />
             </div>
 
             {/* Right: App Screens */}
@@ -89,83 +61,95 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Feature 1 */}
-            <div className="p-6 rounded-lg bg-background border border-border space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Shield className="h-6 w-6 text-primary" />
+            <div className="flex gap-4 items-start md:flex-col md:space-y-4 p-6 rounded-lg bg-background border border-border">
+              <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0">
+                <Shield className="h-6 w-6 text-foreground" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
-                No Judgment
-              </h3>
-              <p className="text-muted-foreground">
-                You&apos;re not here to be judged. No scores, no failures, and streaks don&apos;t define you.
-              </p>
+              <div className="space-y-2 md:space-y-4">
+                <h3 className="text-xl font-semibold text-foreground">
+                  No Judgment
+                </h3>
+                <p className="text-muted-foreground">
+                  You&apos;re not here to be judged. No scores, no failures, and streaks don&apos;t define you.
+                </p>
+              </div>
             </div>
 
             {/* Feature 2 */}
-            <div className="p-6 rounded-lg bg-background border border-border space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Heart className="h-6 w-6 text-primary" />
+            <div className="flex gap-4 items-start md:flex-col md:space-y-4 p-6 rounded-lg bg-background border border-border">
+              <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0">
+                <Heart className="h-6 w-6 text-foreground" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
-                No Perfection Needed
-              </h3>
-              <p className="text-muted-foreground">
-                Starting for 5 minutes is enough. You don&apos;t need perfection—just start.
-              </p>
+              <div className="space-y-2 md:space-y-4">
+                <h3 className="text-xl font-semibold text-foreground">
+                  No Perfection Needed
+                </h3>
+                <p className="text-muted-foreground">
+                  Starting for 5 minutes is enough. You don&apos;t need perfection—just start.
+                </p>
+              </div>
             </div>
 
             {/* Feature 3 */}
-            <div className="p-6 rounded-lg bg-background border border-border space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Timer className="h-6 w-6 text-primary" />
+            <div className="flex gap-4 items-start md:flex-col md:space-y-4 p-6 rounded-lg bg-background border border-border">
+              <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0">
+                <Timer className="h-6 w-6 text-foreground" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
-                Just 5 Minutes
-              </h3>
-              <p className="text-muted-foreground">
-                Five minutes is your safe place. No expectations beyond that—just show up.
-              </p>
+              <div className="space-y-2 md:space-y-4">
+                <h3 className="text-xl font-semibold text-foreground">
+                  Just 5 Minutes
+                </h3>
+                <p className="text-muted-foreground">
+                  Five minutes is your safe place. No expectations beyond that—just show up.
+                </p>
+              </div>
             </div>
 
             {/* Feature 4 */}
-            <div className="p-6 rounded-lg bg-background border border-border space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Sparkles className="h-6 w-6 text-primary" />
+            <div className="flex gap-4 items-start md:flex-col md:space-y-4 p-6 rounded-lg bg-background border border-border">
+              <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0">
+                <Sparkles className="h-6 w-6 text-foreground" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
-                Action First
-              </h3>
-              <p className="text-muted-foreground">
-                This app is different—action first, thinking later. No theory, psychology, or pressure.
-              </p>
+              <div className="space-y-2 md:space-y-4">
+                <h3 className="text-xl font-semibold text-foreground">
+                  Action First
+                </h3>
+                <p className="text-muted-foreground">
+                  This app is different—action first, thinking later. No theory, psychology, or pressure.
+                </p>
+              </div>
             </div>
 
             {/* Feature 5 */}
-            <div className="p-6 rounded-lg bg-background border border-border space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Leaf className="h-6 w-6 text-primary" />
+            <div className="flex gap-4 items-start md:flex-col md:space-y-4 p-6 rounded-lg bg-background border border-border">
+              <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0">
+                <Leaf className="h-6 w-6 text-foreground" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
-                Reconnect with What Matters
-              </h3>
-              <p className="text-muted-foreground">
-                You&apos;re reconnecting with something you love, not &quot;fixing yourself.&quot;
-              </p>
+              <div className="space-y-2 md:space-y-4">
+                <h3 className="text-xl font-semibold text-foreground">
+                  Reconnect with What Matters
+                </h3>
+                <p className="text-muted-foreground">
+                  You&apos;re reconnecting with something you love, not &quot;fixing yourself.&quot;
+                </p>
+              </div>
             </div>
 
             {/* Feature 6 */}
-            <div className="p-6 rounded-lg bg-background border border-border space-y-4">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center">
-                <Heart className="h-6 w-6 text-primary" />
+            <div className="flex gap-4 items-start md:flex-col md:space-y-4 p-6 rounded-lg bg-background border border-border">
+              <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center shrink-0">
+                <Heart className="h-6 w-6 text-foreground" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">
-                Your 5-Minute Doorway
-              </h3>
-              <p className="text-muted-foreground">
-                Think of something that once brought you joy. Give it just five minutes. Every moment counts.
-              </p>
+              <div className="space-y-2 md:space-y-4">
+                <h3 className="text-xl font-semibold text-foreground">
+                  Your 5-Minute Doorway
+                </h3>
+                <p className="text-muted-foreground">
+                  Think of something that once brought you joy. Give it just five minutes. Every moment counts.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -180,34 +164,8 @@ export default function Home() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Download 5MinutesMe today and begin transforming your life, one 5-minute activity at a time.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Button
-              size="lg"
-              className="h-14 px-8 bg-foreground text-background hover:bg-foreground/90 flex items-center gap-3"
-              asChild
-            >
-              <a href="#" className="flex items-center gap-3">
-                <Apple className="h-6 w-6" />
-                <div className="text-left">
-                  <div className="text-xs leading-none">Download on the</div>
-                  <div className="text-lg font-semibold leading-tight">App Store</div>
-                </div>
-              </a>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-14 px-8 border-2 flex items-center gap-3"
-              asChild
-            >
-              <a href="#" className="flex items-center gap-3">
-                <Play className="h-6 w-6" />
-                <div className="text-left">
-                  <div className="text-xs leading-none">Get it on</div>
-                  <div className="text-lg font-semibold leading-tight">Google Play</div>
-                </div>
-              </a>
-            </Button>
+          <div className="flex justify-center pt-4">
+            <AppBadges />
           </div>
         </div>
       </section>
