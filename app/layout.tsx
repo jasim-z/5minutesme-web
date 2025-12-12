@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "5MinutesMe - Transform Your Life in Just 5 Minutes",
-  description: "Build meaningful habits and transform your life, one 5-minute activity at a time.",
+  title: "Just Start Small",
+  description: "Experience your life differently, one 5-minute activity at a time.",
 };
 
 export default function RootLayout({
