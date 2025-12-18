@@ -23,7 +23,6 @@ export function AppScreens() {
   const images = ["1", "2", "3", "4"] as const
 
   const imagePath = (name: string) => `/images/screens/${theme}/${name}.jpg`
-  console.log(imagePath("1"), "imagePath")
 
   // Auto-rotate carousel
   useEffect(() => {

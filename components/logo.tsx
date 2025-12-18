@@ -15,7 +15,9 @@ export function Logo({ size = 32, className = "h-8 w-8" }: LogoProps) {
 
   // Prevent hydration mismatch
   useEffect(() => {
-    setMounted(true)
+    // Avoid direct setState in effect body (lint) by scheduling it.
+    const id = window.setTimeout(() => setMounted(true), 0)
+    return () => window.clearTimeout(id)
   }, [])
 
   // Use appropriate logo based on theme
