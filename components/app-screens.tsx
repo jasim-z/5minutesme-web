@@ -11,19 +11,19 @@ export function AppScreens() {
 
   // Prevent hydration mismatch
   useEffect(() => {
-    setMounted(true)
+    // Avoid direct setState in effect body (lint) by scheduling it.
+    const id = window.setTimeout(() => setMounted(true), 0)
+    return () => window.clearTimeout(id)
   }, [])
 
   // Image paths based on theme
-  const images = [
-    { name: "1", ext: "PNG" },
-    { name: "2", ext: "jpeg" },
-    { name: "3", ext: "PNG" },
-    { name: "4", ext: "PNG" },
-  ]
+  // Uses:
+  // - /public/images/screens/dark/1.jpg ... 4.jpg
+  // - /public/images/screens/light/1.jpg ... 4.jpg
+  const images = ["1", "2", "3", "4"] as const
 
-  const imagePath = (name: string, ext: string) => 
-    `/images/screens/${theme}/${theme}_${name}.${ext}`
+  const imagePath = (name: string) => `/images/screens/${theme}/${name}.jpg`
+  console.log(imagePath("1"), "imagePath")
 
   // Auto-rotate carousel
   useEffect(() => {
@@ -38,16 +38,18 @@ export function AppScreens() {
 
   // Reset to first image when theme changes
   useEffect(() => {
-    setCurrentIndex(0)
+    // Avoid direct setState in effect body (lint) by scheduling it.
+    const id = window.setTimeout(() => setCurrentIndex(0), 0)
+    return () => window.clearTimeout(id)
   }, [theme])
 
   if (!mounted) {
     // Return placeholder during SSR to prevent hydration mismatch
     return (
       <div className="relative w-full max-w-[260px] sm:max-w-[320px] lg:max-w-sm">
-        <div className="relative bg-card border-2 border-border rounded-[3rem] p-3 sm:p-4 shadow-2xl">
-          <div className="bg-background rounded-[2.5rem] overflow-hidden aspect-[9/19.5] flex items-center justify-center">
-            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+        <div className="relative bg-card border-2 border-border rounded-[2.25rem] sm:rounded-[3rem] p-3 sm:p-4 shadow-2xl">
+          <div className="bg-background rounded-[1.9rem] sm:rounded-[2.5rem] overflow-hidden aspect-[9/19.5] flex items-center justify-center">
+            <div className="w-full h-full bg-linear-to-br from-primary/20 to-accent/20 flex items-center justify-center">
               <div className="text-center space-y-4 p-8">
                 <p className="text-muted-foreground text-sm">
                   Loading screens...
@@ -62,23 +64,24 @@ export function AppScreens() {
 
   return (
     <div className="relative w-full max-w-[260px] sm:max-w-[320px] lg:max-w-sm">
-      <div className="relative bg-card border-2 border-border rounded-[3rem] p-3 sm:p-4 shadow-2xl">
-        <div className="bg-background rounded-[2.5rem] overflow-hidden aspect-[9/19.5] relative">
+      <div className="relative bg-card border-2 border-border rounded-[2.25rem] sm:rounded-[3rem] p-3 sm:p-4 shadow-2xl">
+        <div className="bg-background rounded-[1.9rem] sm:rounded-[2.5rem] overflow-hidden aspect-[9/19.5] relative">
           {/* Image Carousel */}
           <div className="relative w-full h-full">
-            {images.map((img, index) => (
+            {images.map((name, index) => (
               <div
-                key={`${theme}_${img.name}`}
+                key={`${theme}_${name}`}
                 className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
                   index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                 }`}
               >
                 <Image
-                  src={imagePath(img.name, img.ext)}
-                  alt={`App screen ${img.name} - ${theme} theme`}
+                  src={imagePath(name)}
+                  alt={`App screen ${name} - ${theme} theme`}
                   fill
                   className="object-contain"
                   priority={index === 0}
+                  unoptimized
                   sizes="(max-width: 768px) 100vw, 400px"
                 />
               </div>

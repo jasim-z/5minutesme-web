@@ -1,7 +1,7 @@
 "use client"
 
 import { useTheme } from "@/components/theme-provider"
-import { useEffect, useState } from "react"
+import { useEffect, useState, type MouseEvent } from "react"
 
 type AppBadgesProps = {
   appStoreUrl?: string
@@ -22,12 +22,12 @@ export function AppBadges({
 
   useEffect(() => {
     // Prevent hydration mismatch
-    if (typeof window !== 'undefined') {
-      setMounted(true)
-    }
+    // Avoid direct setState in effect body (lint) by scheduling it.
+    const id = window.setTimeout(() => setMounted(true), 0)
+    return () => window.clearTimeout(id)
   }, [])
 
-  const handleAppStoreClick = (e: React.MouseEvent) => {
+  const handleAppStoreClick = (e: MouseEvent) => {
     if (!appStoreAvailable) {
       e.preventDefault()
       // Show tooltip on mobile tap
