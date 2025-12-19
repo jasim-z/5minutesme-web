@@ -18,11 +18,11 @@ export function AppScreens() {
 
   // Image paths based on theme
   // Uses:
-  // - /public/images/screens/dark/1.jpg ... 4.jpg
-  // - /public/images/screens/light/1.jpg ... 4.jpg
+  // - /public/images/screens/dark/1.png ... 4.png
+  // - /public/images/screens/light/1.png ... 4.png
   const images = ["1", "2", "3", "4"] as const
 
-  const imagePath = (name: string) => `/images/screens/${theme}/${name}.jpg`
+  const imagePath = (name: string) => `/images/screens/${theme}/${name}.png`
 
   // Auto-rotate carousel
   useEffect(() => {
