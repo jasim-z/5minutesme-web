@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo } from "react"
+import { Suspense, useEffect, useMemo } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 
 type EmailLandingProps = {
@@ -27,7 +27,7 @@ function captureEvent(event: string, properties?: Record<string, unknown>) {
   }
 }
 
-export default function StartPage() {
+function StartContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -97,3 +97,18 @@ export default function StartPage() {
   )
 }
 
+export default function StartPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="min-h-screen bg-background px-6 py-12 flex items-center justify-center">
+          <div className="w-full max-w-[480px] text-center text-muted-foreground">
+            Loading…
+          </div>
+        </main>
+      }
+    >
+      <StartContent />
+    </Suspense>
+  )
+}
