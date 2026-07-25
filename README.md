@@ -69,6 +69,29 @@ The website uses the same color palette as the 5MinutesMe app:
 - Primary: `#3D4F52` (Deep Teal)
 - Text: `#2D3E3F` (Dark Forest)
 
+## Admin: send push notifications
+
+Internal ops UI (not linked from the marketing site):
+
+- URL: `/admin/push`
+- Auth: Supabase **Google** (primary) or email/password
+- Access: emails listed in `ADMIN_EMAILS`
+- Send path: Next.js API route → Supabase `send-push` Edge Function (uses server-only `PUSH_ADMIN_SECRET`)
+
+Copy `.env.example` values into `.env` / Vercel env:
+
+```bash
+PUSH_ADMIN_SECRET=...   # same as Supabase function secret
+ADMIN_EMAILS=you@example.com
+```
+
+In **Supabase Auth → URL configuration**, allow redirect:
+
+- `http://localhost:3000/admin/push` (local)
+- `https://YOUR_PRODUCTION_DOMAIN/admin/push`
+
+`robots` is set to noindex for `/admin/*`. Do not add this route to public navigation.
+
 ## Building for Production
 
 ```bash
