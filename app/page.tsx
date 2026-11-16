@@ -1,8 +1,9 @@
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Timer, Heart, Sparkles, Shield, Leaf } from "lucide-react"
-import { AppScreens } from "@/components/app-screens"
-import { Logo } from "@/components/logo"
-import { AppBadges } from "@/components/app-badges"
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Timer, Heart, Sparkles, Shield, Leaf } from "lucide-react";
+import { AppScreens } from "@/components/app-screens";
+import { Logo } from "@/components/logo";
+import { AppBadges } from "@/components/app-badges";
+import { LegalLinks } from "@/components/legal-links";
 
 export default function Home() {
   return (
@@ -13,7 +14,9 @@ export default function Home() {
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-0">
               <Logo size={32} className="h-8 w-8" />
-              <span className="text-xl font-semibold text-foreground">MinutesMe</span>
+              <span className="text-xl font-semibold text-foreground">
+                MinutesMe
+              </span>
             </div>
             <ThemeToggle />
           </div>
@@ -28,12 +31,13 @@ export default function Home() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Experience Life Differently in Just{" "}
+                  Experience Life Differently in Just{" "}
                   <span className="text-primary">5 Minutes</span>
                 </h1>
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Build meaningful habits and reconnect with what matters. 
-                  No judgment, no perfection—just you and five minutes that belong only to you.
+                  Build meaningful habits and reconnect with what matters. No
+                  judgment, no perfection—just you and five minutes that belong
+                  only to you.
                 </p>
               </div>
 
@@ -57,7 +61,8 @@ export default function Home() {
               Why 5MinutesMe?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A mindful habit companion built for real life—no pressure, just progress.
+              A mindful habit companion built for real life—no pressure, just
+              progress.
             </p>
           </div>
 
@@ -72,7 +77,8 @@ export default function Home() {
                   No Judgment
                 </h3>
                 <p className="text-muted-foreground">
-                  You&apos;re not here to be judged. No scores, no failures, and streaks don&apos;t define you.
+                  You&apos;re not here to be judged. No scores, no failures, and
+                  streaks don&apos;t define you.
                 </p>
               </div>
             </div>
@@ -87,7 +93,8 @@ export default function Home() {
                   No Perfection Needed
                 </h3>
                 <p className="text-muted-foreground">
-                  Starting for 5 minutes is enough. You don&apos;t need perfection—just start.
+                  Starting for 5 minutes is enough. You don&apos;t need
+                  perfection—just start.
                 </p>
               </div>
             </div>
@@ -102,7 +109,8 @@ export default function Home() {
                   Just 5 Minutes
                 </h3>
                 <p className="text-muted-foreground">
-                  Five minutes is your safe place. No expectations beyond that—just show up.
+                  Five minutes is your safe place. No expectations beyond
+                  that—just show up.
                 </p>
               </div>
             </div>
@@ -117,7 +125,8 @@ export default function Home() {
                   Action First
                 </h3>
                 <p className="text-muted-foreground">
-                  This app is different—action first, thinking later. No theory, psychology, or pressure.
+                  This app is different—action first, thinking later. No theory,
+                  psychology, or pressure.
                 </p>
               </div>
             </div>
@@ -132,7 +141,8 @@ export default function Home() {
                   Reconnect with What Matters
                 </h3>
                 <p className="text-muted-foreground">
-                  You&apos;re reconnecting with something you love, not &quot;fixing yourself.&quot;
+                  You&apos;re reconnecting with something you love, not
+                  &quot;fixing yourself.&quot;
                 </p>
               </div>
             </div>
@@ -147,7 +157,8 @@ export default function Home() {
                   Your 5-Minute Doorway
                 </h3>
                 <p className="text-muted-foreground">
-                  Think of something that once brought you joy. Give it just five minutes. Every moment counts.
+                  Think of something that once brought you joy. Give it just
+                  five minutes. Every moment counts.
                 </p>
               </div>
             </div>
@@ -162,7 +173,8 @@ export default function Home() {
             Ready to Start Your Journey?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Download 5MinutesMe today and begin experiencing your life differently, one 5-minute activity at a time.
+            Download 5MinutesMe today and begin experiencing your life
+            differently, one 5-minute activity at a time.
           </p>
           <div className="flex justify-center pt-4">
             <AppBadges />
@@ -176,14 +188,19 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-0">
               <Logo size={24} className="h-6 w-6" />
-              <span className="text-sm font-medium text-foreground">MinutesMe</span>
+              <span className="text-sm font-medium text-foreground">
+                MinutesMe
+              </span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
-            </p>
+            <div className="flex items-center gap-4">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
+              </p>
+              <LegalLinks />
+            </div>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }

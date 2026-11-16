@@ -2,6 +2,7 @@
 
 import { Suspense, useEffect, useMemo } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
+import { LegalLinks } from "@/components/legal-links"
 
 type EmailLandingProps = {
   source: string | null
@@ -92,6 +93,9 @@ function StartContent() {
             </div>
           </div>
         </div>
+        <footer className="mt-12 text-center">
+          <LegalLinks />
+        </footer>
       </div>
     </main>
   )

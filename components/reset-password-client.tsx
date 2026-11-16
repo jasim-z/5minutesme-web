@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Lock, Eye, EyeOff, CheckCircle2, AlertCircle, ExternalLink } from "lucide-react"
 import { supabase } from "@/lib/supabase"
+import { LegalLinks } from "@/components/legal-links"
 
 type PageState = 
   | "verifying" 
@@ -191,9 +192,12 @@ export function ResetPasswordClient() {
                 <Logo size={24} className="h-6 w-6" />
                 <span className="text-sm font-medium text-foreground">MinutesMe</span>
               </div>
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
-              </p>
+              <div className="flex items-center gap-4">
+                <p className="text-sm text-muted-foreground">
+                  © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
+                </p>
+                <LegalLinks />
+              </div>
             </div>
           </div>
         </footer>
@@ -260,9 +264,12 @@ export function ResetPasswordClient() {
                 <Logo size={24} className="h-6 w-6" />
                 <span className="text-sm font-medium text-foreground">MinutesMe</span>
               </div>
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
-              </p>
+              <div className="flex items-center gap-4">
+                <p className="text-sm text-muted-foreground">
+                  © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
+                </p>
+                <LegalLinks />
+              </div>
             </div>
           </div>
         </footer>
@@ -329,9 +336,12 @@ export function ResetPasswordClient() {
                 <Logo size={24} className="h-6 w-6" />
                 <span className="text-sm font-medium text-foreground">MinutesMe</span>
               </div>
-              <p className="text-sm text-muted-foreground">
-                © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
-              </p>
+              <div className="flex items-center gap-4">
+                <p className="text-sm text-muted-foreground">
+                  © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
+                </p>
+                <LegalLinks />
+              </div>
             </div>
           </div>
         </footer>
@@ -501,9 +511,12 @@ export function ResetPasswordClient() {
               <Logo size={24} className="h-6 w-6" />
               <span className="text-sm font-medium text-foreground">MinutesMe</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
-            </p>
+            <div className="flex items-center gap-4">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
+              </p>
+              <LegalLinks />
+            </div>
           </div>
         </div>
       </footer>

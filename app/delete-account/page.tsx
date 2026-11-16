@@ -3,6 +3,7 @@ import { Logo } from "@/components/logo"
 import Link from "next/link"
 import { ArrowLeft, Trash2, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { LegalLinks } from "@/components/legal-links"
 
 export default function DeleteAccount() {
   return (
@@ -133,9 +134,12 @@ export default function DeleteAccount() {
               <Logo size={24} className="h-6 w-6" />
               <span className="text-sm font-medium text-foreground">MinutesMe</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
-            </p>
+            <div className="flex items-center gap-4">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
+              </p>
+              <LegalLinks />
+            </div>
           </div>
         </div>
       </footer>
