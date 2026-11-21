@@ -3,6 +3,7 @@ import { Logo } from "@/components/logo"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { LegalLinks } from "@/components/legal-links"
 
 export default function PrivacyPolicy() {
   const currentDate = new Date().toLocaleDateString("en-US", {
@@ -177,7 +178,22 @@ export default function PrivacyPolicy() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-2xl font-bold text-foreground">8. Contact Us</h2>
+              <h2 className="text-2xl font-bold text-foreground">8. Contact Form</h2>
+              <p className="text-foreground">
+                If you use our{" "}
+                <Link href="/kontakt" className="text-primary hover:underline">
+                  contact form
+                </Link>
+                , your name (optional), email address and message are sent to us by email via Brevo
+                (Sendinblue SAS, EU), only to answer your request. The legal basis is Art. 6(1)(b) GDPR
+                where your request relates to a contract, and otherwise our legitimate interest in
+                answering you, Art. 6(1)(f) GDPR. We delete your message when your request is done,
+                unless we are legally required to keep it longer.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-foreground">9. Contact Us</h2>
               <p className="text-foreground">
                 If you have any questions regarding this Privacy Policy, please contact us at:
               </p>
@@ -202,9 +218,12 @@ export default function PrivacyPolicy() {
               <Logo size={24} className="h-6 w-6" />
               <span className="text-sm font-medium text-foreground">MinutesMe</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
-            </p>
+            <div className="flex items-center gap-4">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
+              </p>
+              <LegalLinks />
+            </div>
           </div>
         </div>
       </footer>

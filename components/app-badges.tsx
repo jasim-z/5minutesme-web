@@ -42,9 +42,10 @@ export function AppBadges({
   // App Store badge - use appropriate version based on theme
   // For dark theme, use white badge (shows better on dark background)
   // For light theme, use black badge (shows better on light background)
-  const appStoreBadge = theme === "dark" 
-    ? "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/white/en-us?size=250x83&releaseDate=1276560000"
-    : "https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000"
+  // Served locally from public/badges so the page makes no request to Apple.
+  const appStoreBadge = theme === "dark"
+    ? "/badges/app-store-white.svg"
+    : "/badges/app-store-black.svg"
 
   // Google Play badge - using local image from public folder
   const googlePlayBadge = "/GetItOnGooglePlay_English.png"

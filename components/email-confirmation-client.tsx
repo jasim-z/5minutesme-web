@@ -6,6 +6,7 @@ import { CheckCircle2, ExternalLink } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Logo } from "@/components/logo"
 import { Button } from "@/components/ui/button"
+import { LegalLinks } from "@/components/legal-links"
 
 export function EmailConfirmationClient() {
   const deepLink = useMemo(() => "5minutesme://", [])
@@ -107,9 +108,12 @@ export function EmailConfirmationClient() {
               <Logo size={24} className="h-6 w-6" />
               <span className="text-sm font-medium text-foreground">MinutesMe</span>
             </div>
-            <p className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
-            </p>
+            <div className="flex items-center gap-4">
+              <p className="text-sm text-muted-foreground">
+                © {new Date().getFullYear()} 5MinutesMe. All rights reserved.
+              </p>
+              <LegalLinks />
+            </div>
           </div>
         </div>
       </footer>
